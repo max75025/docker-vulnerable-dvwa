@@ -48,7 +48,7 @@ dvwaMessagePush( "'users' table was created." );
 
 // Insert some data into users
 $avatarUrl  = '/hackable/users/';
-$login_pass = getenv('LOGIN_PASS');
+$login_pass = 'Very_strong_dvwa_password';
 
 $insert = "INSERT INTO users VALUES
 	('1','admin','admin','admin',MD5('{$login_pass}'),'{$avatarUrl}admin.jpg', NOW(), '0')";
