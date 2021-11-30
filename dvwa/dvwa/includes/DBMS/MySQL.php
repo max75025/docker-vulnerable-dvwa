@@ -48,9 +48,10 @@ dvwaMessagePush( "'users' table was created." );
 
 // Insert some data into users
 $avatarUrl  = '/hackable/users/';
+$login_pass = getenv('LOGIN_PASS');
 
 $insert = "INSERT INTO users VALUES
-	('1','admin','admin','admin',MD5(getenv('LOGIN_PASS')),'{$avatarUrl}admin.jpg', NOW(), '0')";
+	('1','admin','admin','admin',MD5({$login_pass}),'{$avatarUrl}admin.jpg', NOW(), '0')";
 if( !mysqli_query($GLOBALS["___mysqli_ston"],  $insert ) ) {
 	dvwaMessagePush( "Data could not be inserted into 'users' table<br />SQL: " . ((is_object($GLOBALS["___mysqli_ston"])) ? mysqli_error($GLOBALS["___mysqli_ston"]) : (($___mysqli_res = mysqli_connect_error()) ? $___mysqli_res : false)) );
 	dvwaPageReload();
