@@ -1,6 +1,9 @@
 FROM debian:9.2
 
-LABEL maintainer "opsxcq@strm.sh"
+LABEL maintainer "open_maintainer"
+
+ARG LOGIN_PASS=Very_strong_dvwa_password
+ENV LOGIN_PASS="${LOGIN_PASS}"
 
 RUN apt-get update && \
     apt-get upgrade -y && \
