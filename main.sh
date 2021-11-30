@@ -2,6 +2,8 @@
 
 chown -R mysql:mysql /var/lib/mysql /var/run/mysqld
 
+sed -i "s/Very_strong_dvwa_password/$LOGIN_PASS/" /var/www/html/dvwa/includes/DBMS/MySQL.php
+
 echo '[+] Starting mysql...'
 service mysql start
 
