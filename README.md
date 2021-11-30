@@ -1,6 +1,4 @@
 # Damn Vulnerable Web Application Docker container
-[![Docker Pulls](https://img.shields.io/docker/pulls/vulnerables/web-dvwa.svg?style=plastic)](https://hub.docker.com/r/vulnerables/web-dvwa/)
-![License](https://img.shields.io/badge/License-GPL-blue.svg?style=plastic)
 
 Damn Vulnerable Web Application (DVWA) is a PHP/MySQL web application that is damn vulnerable. Its main goal is to be an aid for security professionals to test their skills and tools in a legal environment, help web developers better understand the processes of securing web applications and to aid both students & teachers to learn about web application security in a controlled class room environment.
 
@@ -27,6 +25,14 @@ To login you can use the following credentials:
   * Username: admin
   * Password: password
 
+## Default password after create/reset database
+  Very_strong_dvwa_password
+  
+## Set custom login password
+
+sudo docker run -d -p 80:80 --rm --env LOGIN_PASS="your_pass" {image_name}
+
+
 ## Set the dificulty level
 
 The default dificulty level is the ```impossible``` level, you can change it in ```DVWA Security``` item in the left menu.
@@ -46,7 +52,7 @@ There are several other ways and other vulnerabilities do exploit, go ahead, hav
 
 ## About DVWA
 
-You can visit DVWA [official website](http://www.dvwa.co.uk/) and official [github repository](https://github.com/ethicalhack3r/DVWA) if you want more information.
+You can visit DVWA [official website](http://www.dvwa.co.uk/).
 
 ## Disclaimer
 
